@@ -1,0 +1,948 @@
+/* Custom fonts */
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter-Regular.ttf') format('truetype');
+}
+
+* {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-color: #D9D9D9;
+    --primary-text-color: #000000;
+    --secondary-text-color: #FFFFFF;
+
+    --profile-color: #FCFCFC;
+
+    /* Green shades */
+    --green-pale: #119D41; /* Light green */
+     --green-light: #0E8104; /* Medium green */
+    --green-medium: #0B5D0A; /* Dark green */
+    --green-dark: #042E00; /* Very dark green */
+}
+
+body {
+    height: 100vh;
+    background: var(--body-color);
+    margin: 0; /* Remove default margin */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Start of Header */
+.header {
+    display: flex;
+    align-items: center; /* Vertically centers the items */
+    padding: 1vh;
+    height: 10vh;
+    width: 100vw;
+    background: var(--green-dark);
+}
+
+.logo img {
+    width: 4vw;
+    margin-left: 0.8vw;
+}
+
+.header-text {
+    margin-left: 0.8vw;
+    color: var(--secondary-text-color);
+    font-style: italic;
+    font-size: 1.5vw;
+    font-weight: bold;
+}
+
+.profile {
+    margin-left: auto;
+    margin-right: 1vw;
+}
+
+.frame {
+    width: 9vw;
+    align-items: center;
+    margin-right: auto;
+    position: relative;
+}
+
+.profile-holder img {
+    height: 6vh;
+    width: 6vh;
+    position: relative; /* Add position relative */
+    z-index: 2; /* Add z-index to bring it to the front */
+    cursor: pointer;
+}
+
+.box {
+    height: 5vh;
+    width: 9vw;
+    background: var(--profile-color);
+    border: 0.3vw solid var(--green-pale);
+    border-radius: 5vh;
+    position: absolute;
+    top: 45%;
+    left: 100%;
+    transform: translate(-100%, -50%);
+    z-index: 1; /* Add higher z-index to bring it in front of the image */
+    display: flex;
+    align-items: center; /* Vertically center */
+    justify-content: flex-end; /* Align items to the right */
+    padding-right: .5vw; /* Add padding to the right */
+    cursor: pointer;
+}
+
+.box-text {
+    color: var(--primary-text-color);
+    font-size: 1vw;
+    font-weight: bold;
+    padding-right: 0.2vw;
+}
+
+.box-arrow {
+    height: 3vh;
+    width: 3vh;
+}
+
+.dropdown {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--body-color);
+    border: 0.1vw solid var(--green-pale);
+    border-radius: 0.5vw;
+    box-shadow: 0 0.8vw 1.6vw rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown ul li {
+    padding: 1vh 2vw;
+}
+
+.dropdown ul li a {
+    text-decoration: none;
+    color: var(--primary-text-color);
+    display: block;
+}
+
+.dropdown ul li:hover {
+    background: var(--body-color);
+    border-radius: 0.5vw;
+}
+
+
+
+.dropdown-logout {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--body-color);
+    border: 0.1vw solid var(--green-pale);
+    border-radius: 0.5vw;
+    box-shadow: 0 0.8vw 1.6vw rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.dropdown-logout ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-logout ul li {
+    padding: 1vh 2vw;
+}
+
+.dropdown-logout ul li a {
+    text-decoration: none;
+    color: var(--primary-text-color);
+    display: block;
+}
+
+.dropdown-logout ul li:hover {
+    background: var(--body-color);
+    border-radius: 0.5vw;
+}
+
+
+
+
+/* End of Header */
+
+/* Start of Side-bar */
+.sidebar {
+    position: fixed;
+    top: 10vh;
+    left: 0;
+    height: 100%;
+    width: 15vw;
+    padding: 2vh;
+    background: var(--green-medium);
+}
+
+.sidebar a {
+    height: 6vh;
+    background: rgba(4, 46, 0, 0.7);
+    margin-top: 3vh;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5vh;
+    text-decoration: none;
+    color: var(--secondary-text-color);
+    font-size: 1.2vw;
+}
+/* End of Side-bar */
+
+/* Start of Dashboard */
+.dashboard-frame {
+    display: flex; /* Make the parent a flex container */
+    flex-direction: column;
+    position: fixed;
+    top: 10vh;
+    left: 15vw;
+    height: calc(100vh - 10vh); /* Subtract the header height */
+    width: calc(100vw - 15vw); /* Subtract the sidebar width */
+}
+
+.dashboard-frame .dashboard-title {
+    margin: 3vh;
+    color: var(--primary-text-color);
+    font-style: italic;
+    font-size: 2.2vw;
+    font-weight: bold;
+}
+
+.dashboard-frame .content {
+    display: flex; /* Add display flex */
+    height: 100%; /* Use 100vh for full viewport height */
+    width: 100%; /* Use 100vw for full viewport width */
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20vh;
+}
+
+.dashboard-frame .content .content-box {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+    justify-content: center;
+    margin: 7vh;
+    width: 20vw;
+    height: 30vh;
+    background: var(--green-medium);
+    border-radius: 1vh;
+}
+
+.dashboard-frame .content .content-box .content-name {
+    color: var(--secondary-text-color);
+    font-size: 1.5vw;
+    margin: 2vh;
+}
+
+.dashboard-frame .content .content-box img {
+    height: 8vh;
+    width: 8vh;
+}
+/* End of Dashboard */
+
+/* Start of Visitors */
+.visitors-frame {
+    display: flex;
+    flex-direction: column;
+    position: fixed; /* Change to fixed */
+    top: 10vh;
+    left: 15vw;
+    height: calc(100vh - 10vh);
+    width: calc(100vw - 15vw);
+    overflow-y: auto; /* Add overflow-y for vertical scrolling */
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+}
+
+.first {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.visitors-title {
+    margin-top: 3vh;
+    margin-left: 2vw;
+    color: var(--primary-text-color);
+    font-style: italic;
+    font-size: 2.2vw;
+    font-weight: bold;
+}
+
+.addGuest-btn {
+    height: 5vh;
+    width: 8vw;
+    border-radius: 1vh;
+    background: var(--green-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3vh;
+    margin-left: 3vw;;
+    cursor: pointer;
+}
+
+
+.addGuest-btn:hover {
+    background-color: var(--green-medium);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.addGuest-btn-text {
+    color: var(--secondary-text-color);
+    font-size: 1.2vw;
+}
+
+
+.addUser-btn {
+    height: 5vh;
+    width: 8vw;
+    border-radius: 1vh;
+    background: var(--green-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3vh;
+    margin-left: 3vw;;
+    cursor: pointer;
+}
+
+
+.addUser-btn:hover {
+    background-color: var(--green-medium);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.addUser-btn-text {
+    color: var(--secondary-text-color);
+    font-size: 1.2vw;
+}
+
+
+
+
+
+
+.table1 {
+    width: 100%;
+    display: flex;
+}
+
+.guestType {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 3vh;
+}
+
+.table1-title {
+    color: var(--primary-text-color);
+    font-size: 1.1vw;
+}
+
+.guest-dropdown-container,
+.popup-dropdown-container {
+    position: relative;
+}
+
+.guestType-button,
+.popup-guestType-button {
+    height: 5vh;
+    width: 8vw;
+    background: var(--profile-color);
+    border: 0.2vw solid var(--green-pale);
+    border-radius: 1.2vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    margin-top: 1vh;
+    padding: 0 1vw;
+}
+
+.guest-dropdown-content,
+.popup-dropdown-content {
+    display: none;
+    position: absolute;
+    background: var(--profile-color);
+    box-shadow: 0 0 0.1vw rgba(0, 0, 0, 1);
+    padding: 1.2vh;
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    border-radius: 1vh;
+    height: 5vh;
+    width: 8vw;
+    display: flex; /* Add flexbox */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    margin-top: .5vh;
+    border-bottom:  0.2vh solid var(--green-light);;
+}
+
+.guest-dropdown-content span,
+.popup-dropdown-content span {
+    font-size: 1vw;
+    display: flex; /* Add flexbox */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+}
+
+
+.guest-box:hover {
+    background-color: var(--body-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.guest-box-text,
+.popup-RegularVis-btn {
+    color: var(--primary-text-color);
+    font-size: 1.1vw;
+    flex: 1;
+    text-align: center;
+}
+
+.guest-box-arrow {
+    height: 3vh;
+    width: 3vh;
+}
+
+
+.container9 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 3vh;
+}
+
+.container9 input[type="date"] {
+    width: 20vh; /* Adjust the width as needed */
+    height: 5vh; /* Adjust the height as needed */
+    border: 3px solid #119D41; /* Border for the input */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Adjust the font size */
+    color: #000000; /* Text color */
+}
+
+.container9 input[type="date"]::placeholder {
+    color: #999; /* Adjust the placeholder color */
+    font-style: italic; /* Keep placeholder italic */
+}
+
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 3vh;
+}
+
+.search-container div{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-input {
+    width: 90%;
+    padding: 10px 40px 10px 20px;
+    border-radius: 5px;
+    border: 3px solid #119D41; /* Border color */
+    box-sizing: border-box;
+}
+
+.search-icon {
+
+    position: relative; 
+    top: 10%;
+    left: -40px;
+    font-size: 18px;
+    color: #0E8104; /* Icon color */
+}
+
+
+
+.reg-table-container,
+.vip-table-container,
+.users-table-container {
+    width: 98%;
+    height: 100%;
+    background: var(--secondary-text-color);
+    margin-bottom: 1.5vh;
+    border-radius: 2vh;
+    box-shadow: 0 .5vh 1vh rgba(0, 0, 0, 0.2);
+    
+    overflow-y: auto; /* Add overflow-y for vertical scrolling */
+}
+
+.reg-table-container table,
+.vip-table-container table,
+.users-table-container {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.reg-table thead,
+.vip-table thead,
+.users-table thead {
+    background: var(--green-pale);
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+}
+
+.reg-table-container  th, td,
+.vip-table-container  th, td,
+.users-table-container  th, td {
+    padding: 1.2vh 1.5vh;
+    text-align: center;
+}
+
+.reg-table-container tr:nth-child(even),
+.vip-table-container tr:nth-child(even),
+.users-table-container tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.dropdown-container {
+    position: relative;
+}
+
+.dropdown-button {
+    height: 5vh;
+    width: 5vw;
+    border: 0.2vw solid var(--green-pale);
+    border-radius: 1vh;
+    background: var(--secondary-text-color);
+    font-size: 0.95vw;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: var(--green-light);
+    box-shadow: 0 0 0.1vw rgba(0, 0, 0, 0.1);
+    padding: 1vh;
+    z-index: 1;
+    top: 100%;
+    right: 0;
+    border-radius: 1vh;
+}
+
+.popup-camera-content .camera-button-container {
+    display: flex;
+}
+
+.dropdown-content button {
+    display: block;
+    height: 4.5vh;
+    width: 5vw;
+    margin-bottom: 1vh;
+    background: var(--secondary-text-color);
+    font-size: 0.95vw;
+    border-radius: 1vh;
+}
+
+.popup-camera {
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 777;
+}
+
+.popup-camera-content {
+    padding-top: 5vh;
+    height: 70vh;
+    width: 50vw;
+    background: var(--secondary-text-color);
+    border-radius: 3vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Align content horizontally in the center */
+    justify-content: flex-start; /* Align content to the top */
+}
+
+.popup-camera-content video {
+    width: 80%;
+    height: 80%;
+}
+
+.popup-camera-content canvas {
+    width: 76%;
+    height: 80%;
+}
+
+.popup-camera-content img {
+    width: 8vh;
+    height: 8vh;
+    cursor: pointer;
+    margin-top: 1.2vh;
+    margin-left: 1.2vh;
+    margin-right: 1.2vh;
+}
+
+
+
+
+
+
+.id-popup-camera-content .id-camera-button-container {
+    display: flex;
+}
+
+
+.id-popup-camera {
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 777;
+}
+
+.id-popup-camera-content {
+    padding-top: 5vh;
+    height: 70vh;
+    width: 50vw;
+    background: var(--secondary-text-color);
+    border-radius: 3vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Align content horizontally in the center */
+    justify-content: flex-start; /* Align content to the top */
+}
+
+.id-popup-camera-content video {
+    width: 80%;
+    height: 80%;
+}
+
+.id-popup-camera-content canvas {
+    width: 76%;
+    height: 80%;
+}
+
+.id-popup-camera-content img {
+    width: 8vh;
+    height: 8vh;
+    cursor: pointer;
+    margin-top: 1.2vh;
+    margin-left: 1.2vh;
+    margin-right: 1.2vh;
+}
+
+
+
+
+
+
+
+
+
+
+
+.popup {
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 555;
+}
+
+.popup-content {
+    height: 110vh;
+    width: 95vw;
+    background: var(--secondary-text-color);
+    border-radius: 3vh;
+    border: 20px solid var(--green-medium);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Align content horizontally in the center */
+    justify-content: flex-start; /* Align content to the top */
+}
+
+
+.popup-content .popup-title {
+    margin-top: 3vh;
+    color: var(--primary-text-color);
+    font-size: 2vw;
+    font-weight: bold;
+    text-align: center; /* Center text horizontally */
+    width: 100%; /* Make title container span the entire width */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+}
+
+
+/* this input container for Regular and VIP visitors */
+.popup-content .input-container {
+    margin-top: 2vh;
+    width: 100%; /* Adjust the width as needed */
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6vh; /* Space between input fields */
+    /* background-color: #0B5D0A; */
+}
+
+.popup-content .image-container {
+    /* width: 25%;  */
+    height: 100%;
+    display: flex;
+    margin-top: 5%;
+    flex-direction: column;
+    
+    /* background-color: #0B5D0A; */
+}
+
+.popup-content .id-image-container {
+    /* width: 25%;  */
+    height: 100%;
+    display: flex;
+    margin-top: 5%;
+    flex-direction: column;
+    
+    /* background-color: #0B5D0A; */
+}
+
+.popup.show {
+    display: flex;
+}
+
+
+
+
+.image-container .image-holder {
+    min-width: 10vw;
+    min-height: 15vh;
+    max-width: 20vw; /* Allow the width to be determined by the image */
+    max-height: auto; /* Set a maximum height for the image */
+    border: 0.2vw solid var(--green-pale);
+    margin-bottom: 1vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Hide overflow if the image exceeds the container size */
+}
+
+.image-holder img {
+    max-width: 100%; /* Ensure the image doesn't exceed the container's width */
+    max-height: 100%; /* Ensure the image doesn't exceed the container's height */
+    object-fit: contain; /* Keep the image aspect ratio while fitting inside the container */
+}
+
+.image-container .image-button-container{
+    margin: 2vh;
+}
+
+.image-container .image-button-container div{
+    margin: 2vh;
+    width: 7vw; /* Adjust the width as needed */
+    height: 5vh;
+    display: flex;
+    justify-content: center; /* Center the image container */
+    align-items: center;
+    background: var(--green-light);
+
+    font-size: 2vh;
+    color: var(--secondary-text-color);
+
+    border-radius: 1vh;
+    cursor: pointer;
+}
+
+
+
+.id-image-container .id-image-holder {
+    min-width: 10vw;
+    min-height: 15vh;
+    max-width: 20vw; /* Allow the width to be determined by the image */
+    max-height: auto; /* Set a maximum height for the image */
+    border: 0.2vw solid var(--green-pale);
+    margin-bottom: 1vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Hide overflow if the image exceeds the container size */
+}
+
+.id-image-holder img {
+    max-width: 100%; /* Ensure the image doesn't exceed the container's width */
+    max-height: 100%; /* Ensure the image doesn't exceed the container's height */
+    object-fit: contain; /* Keep the image aspect ratio while fitting inside the container */
+}
+
+
+
+.id-image-container .id-image-button-container{
+    margin: 2vh;
+}
+
+.id-image-container .id-image-button-container div{
+    margin: 2vh;
+    width: 7vw; /* Adjust the width as needed */
+    height: 5vh;
+    display: flex;
+    justify-content: center; /* Center the image container */
+    align-items: center;
+    background: var(--green-light);
+
+    font-size: 2vh;
+    color: var(--secondary-text-color);
+
+    border-radius: 1vh;
+    cursor: pointer;
+}
+
+
+.popup-content .text-input-container {
+    /* width: 35%;  */
+    height: 100%;
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    /* background-color: #0B5D0A; */
+}
+
+.popup-content .text-input-container .inputs{
+    /* background-color: #0B5D0A; */
+    margin: 1vh;
+}
+
+.popup-content .text-input-container .selects{
+    /* background-color: #0B5D0A; */
+    margin: 1vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.popup-content .text-input-container select {
+    /* background-color: #0B5D0A; */
+    font-size: 2vh;
+    height: 4.8vh;
+    padding: 1vh;
+    margin-top: .5vh;
+    border: 0.18vw solid var(--green-pale);
+    border-radius: 0.5vh;
+}
+
+
+
+/* 
+.popup-content .text-input-container .inputs div{
+    background-color: #0B5D0A;
+} */
+
+.popup-content .text-input-container .inputs .label {
+    /* background-color: #0B5D0A; */
+    font-size: 2.3vh;
+    font-weight: 500;
+}
+
+.popup-content .text-input-container input {
+    /* background-color: #0B5D0A; */
+    font-size: 2vh;
+    height: 4.8vh;
+    padding: 1vh;
+    margin-top: .5vh;
+    border: 0.18vw solid var(--green-pale);
+    border-radius: 0.5vh;
+}
+
+.popup-content .text-input-container .signature {
+    /* background-color: #0B5D0A; */
+    font-size: 2vh;
+    height: 100%;
+    width: 100%;
+    padding: 1vh;
+    margin-top: .5vh;
+    border: 0.18vw solid var(--green-pale);
+    border-radius: 1vh;
+}
+
+.popup-content .text-input-container .clear-signature {
+    /* background-color: #0B5D0A; */
+    height: 6vh;
+    width: 6vh;
+}
+
+.popup-content .popup-button-container {
+    margin: 2vh;
+    width: 100%; /* Adjust the width as needed */
+    height: 10%;
+    display: flex;
+    justify-content: center; /* Center the image container */
+    align-items: center;
+    /* background-color: #0B5D0A; */
+}
+
+.popup-content .popup-button-container div{
+    margin: 2vh;
+    width: 7vw; /* Adjust the width as needed */
+    height: 5vh;
+    display: flex;
+    justify-content: center; /* Center the image container */
+    align-items: center;
+    background: var(--green-light);
+
+    font-size: 2vh;
+    color: var(--secondary-text-color);
+
+    border-radius: 1vh;
+    cursor: pointer;
+}
+
+.popup-content .popup-button-container button{
+    margin: 2vh;
+    width: 7vw; /* Adjust the width as needed */
+    height: 5vh;
+    display: flex;
+    justify-content: center; /* Center the image container */
+    align-items: center;
+    background: var(--green-light);
+
+    font-size: 2vh;
+    color: var(--secondary-text-color);
+
+    border-radius: 1vh;
+    cursor: pointer;
+}
+
+
+
+
+
+/* End of Visitors */
+

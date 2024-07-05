@@ -1,0 +1,220 @@
+body {
+    background-image: url('../img/bg.png'); /* Ensure this path is correct */
+    background-size:100% 120%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+       overflow: hidden; /* Hide overflow */
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(11, 78, 10, 0.45);; /* Adjust the alpha (last value) for transparency */
+}
+
+.logobox {
+    width: 25%; /* Adjust width as needed */
+    height: 75%; /* Adjust height as needed */
+    background-color: rgba(4, 46, 0,0.5); /* Change background color */
+    position: absolute;
+    top: 49%; /* Position the box vertically */
+    left: 40%; /* Position the box horizontally */
+    transform: translate(-50%, -50%); /* Center the box */
+    z-index: 1;
+}
+
+.loginbox {
+    width: 25%; /* Adjust width as needed */
+    height: 75%; /* Adjust height as needed */
+    background-color: rgba(4, 46, 0); /* Change background color */
+    position: absolute;
+    top: 49%; /* Position the box vertically */
+    left: 65%; /* Position the box horizontally */
+    transform: translate(-50%, -50%); /* Center the box */
+    z-index: 1;
+}
+
+.logo {
+    position: absolute;
+    top: 15%; /* Position the box vertically */
+    left: 23%; /* Position the box horizontally */
+    width: 60%; /* Adjust width as needed */
+    height:40%; /* Maintain aspect ratio */
+    z-index: 1;
+}
+
+.welcome{
+    position: absolute;
+    top: 55%; /* Position the box vertically */
+    left: 5vh;  
+    font-family: 'Inter', sans-serif; /* Specify Inter font family */
+    font-style: italic; /* Set text to italic */
+    font-weight: bold; /* Set text to bold */
+    font-size: 2.3vw; /* Adjust font size as needed */
+    text-align: center; /* Center align text */
+    color: white; /* Change text color */
+    z-index: 1;
+     
+
+}
+
+.text{
+    position: absolute;
+    top: 3%; /* Position the box vertically */
+    left: 5dvh;  
+    font-family: 'Inter', sans-serif; /* Specify Inter font family */
+    font-style: italic; /* Set text to italic */
+    font-weight: bold; /* Set text to bold */
+    font-size: 2.3vw; /* Adjust font size as needed */
+    color: white; /* Change text color */
+    z-index: 1;
+}
+
+.text2{
+    position: absolute;
+    top: 10%; /* Position the box vertically */
+    left: 5dvh;  
+    font-family: 'Inter', sans-serif; /* Specify Inter font family */
+    font-style: italic; /* Set text to italic */
+    font-weight: bold; /* Set text to bold */
+    font-size: 2.3vw; /* Adjust font size as needed */
+    color: white; /* Change text color */
+    z-index: 1;
+}
+
+.underline{
+    width: 20%; /* Adjust width as needed */
+    height: 1%; /* Adjust height as needed */
+    background-color: #0E8104; /* Change background color */
+    position: absolute;
+    top: 28%; /* Position the box vertically */
+    left: 65%; /* Position the box horizontally */
+    transform: translate(-50%, -50%); /* Center the box */
+    z-index: 1;
+}
+
+
+
+.text3{
+    position: absolute;
+    top: 30%; /* Position the box vertically */
+    left: 5dvh;  
+    font-family: 'Inter', sans-serif; /* Specify Inter font family */
+    font-size: 1.8vw; /* Adjust font size as needed */
+    color: white; /* Change text color */
+    z-index: 1;
+}
+
+.box{
+    width: 3%; /* Adjust width as needed */
+    height: 6%; /* Adjust height as needed */
+    border-radius: 15%;
+    background-color: #0E8104; /* Change background color */
+    position: absolute;
+    top: 50%; /* Position the box vertically */
+    left: 56%; /* Position the box horizontally */
+    transform: translate(-50%, -50%); /* Center the box */
+    z-index: 1;
+
+}
+
+
+
+
+.user{
+    width: 80%; /* Adjust width as needed */
+    height: 80%; /* Adjust height as needed */
+    position: absolute;
+    top: 49%; /* Position the box vertically */
+    left: 52%; /* Position the box horizontally */
+    transform: translate(-50%, -50%); /* Center the box */
+    z-index: 1;
+
+}
+
+.username-input{
+    
+    width: 14.5vw; 
+    height: 2.5vw; 
+    border-radius: 1vw;
+    background-color: #ffffff; /* Change background color */
+    border: 0.3vw solid #119D41;
+    position: absolute;
+    top: 50%; /* Position the box vertically */
+    left: 380%; /* Position the box horizontally */
+    transform: translate(-7.5vw, -1.5vw); /* Center the box */
+    font-size: 1.0vw;
+    z-index: 1;
+    outline: none;
+
+
+}
+
+.box2{
+    width: 3%; /* Adjust width as needed */
+    height: 6%; /* Adjust height as needed */
+    border-radius: 15%;
+    background-color: #0E8104; /* Change background color */
+    position: absolute;
+    top: 60%; /* Position the box vertically */
+    left: 56%; /* Position the box horizontally */
+    transform: translate(-50%, -50%); /* Center the box */
+    z-index: 1;
+
+}
+
+.padlock{
+    width: 80%; /* Adjust width as needed */
+    height: 80%; /* Adjust height as needed */
+    position: absolute;
+    top: 49%; /* Position the box vertically */
+    left: 52%; /* Position the box horizontally */
+    transform: translate(-50%, -50%); /* Center the box */
+    z-index: 1;
+}
+
+.password-input{
+    
+    width: 14.5vw; /* Adjust width as needed */
+    height: 2.5vw; /* Adjust height as needed */
+    border-radius: 1vw;
+    background-color: #ffffff; /* Change background color */
+    border: 0.3vw solid #119D41;
+    position: absolute;
+    top: 50%; /* Position the box vertically */
+    left: 380%; /* Position the box horizontally */
+    transform: translate(-7.5vw, -1.5vw); /* Center the box */
+    font-size: 1.0vw;
+    z-index: 1;
+    outline: none;
+
+
+}
+    
+.submit-button {
+    width: 8vw; /* Adjust width as needed */
+    height: 3vw; /* Adjust height as needed */
+    border: none;
+    border-radius: 1vw;
+    background-color: #0E8104;
+    color: white;
+    font-size: 1.5vw;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Add transition for smoother hover effect */
+    position: absolute; /* Make the button position absolute */
+    top: 180%; /* Position from the top */
+    left: 250%; /* Position from the left */
+}
+
+.submit-button:hover {
+    background-color: #0C6A03; /* Change background color on hover */
+}
+
+
+
+
